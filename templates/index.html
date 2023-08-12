@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- header section end -->
+<header class="masthead d-flex align-items-center">
+    <div class="container px-4 px-lg-5 text-center">
+        <h1 class="mb-1">Arijit Samaddar</h1>
+        <h3 class="mb-5"><em>Full Stack Web Developer</em></h3>
+        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+    </div>
+</header>
+<!-- About-->
+<section class="content-section bg-light" id="about">
+    <div class="container px-4 px-lg-5 text-center">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-10">
+                <h2>As a Web Developer, I can offer the perfect solution for your next project!</h2>
+                <p class="lead mb-5">
+                    This website featuring all my expertise and development scopes within a friendly sidebar menu and details. For my resume please visit my resume site
+                    <a href="#">Here</a>
+                    !
+                </p>
+                <a class="btn btn-dark btn-xl" href="#services">What I Offer</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services-->
+<section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container px-4 px-lg-5">
+        <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">Services</h3>
+            <h2 class="mb-5">What I Offer as a Web Developer</h2>
+        </div>
+        <div class="row gx-4 gx-lg-5">
+            {% for item in serviceData %}
+            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                <span class="service-icon rounded-circle mx-auto mb-3">
+                    <img src="/media/{{item.service_img}}" style="height: 60px;width: 60px;">
+                </span>
+                <h4><strong style="color: ;">{{item.service_title}}</strong></h4>
+                <p class="text-faded mb-0">{{item.service_sub}}</p>
+            </div>
+            {% endfor %}
+            {% comment %} <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
+                <h4><strong>Redesigned</strong></h4>
+                <p class="text-faded mb-0">Freshly redesigned for Bootstrap 5.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
+                <h4><strong>Favorited</strong></h4>
+                <p class="text-faded mb-0">
+                    Millions of users
+                    <i class="fas fa-heart"></i>
+                    Start Bootstrap!
+                </p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
+                <h4><strong>Question</strong></h4>
+                <p class="text-faded mb-0">I mustache you a question...</p>
+            </div> {% endcomment %}
+        </div>
+    </div>
+</section>
+<!-- Callout-->
+<section class="callout">
+    <div class="container px-4 px-lg-5 text-center">
+        <h2 class="mx-auto mb-5">
+            Download my full 
+            <em>Portfolio</em>
+            by clicking below button!
+        </h2>
+        <a class="btn btn-primary btn-xl" href="#">Download Now!</a>
+    </div>
+</section>
+<!-- Portfolio-->
+<section class="content-section" id="portfolio">
+    <div class="container px-4 px-lg-5">
+        <div class="content-section-heading text-center">
+            <h3 class="text-secondary mb-0">Portfolio</h3>
+            <h2 class="mb-5">Recent Projects</h2>
+        </div>
+        <div class="row gx-0">
+            {% comment %} <div class="col-lg-6">
+                <a class="portfolio-item" href="#!">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <div class="h2">Stationary</div>
+                            <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="/static/assets/img/portfolio-1.jpg" alt="..." />
+                </a>
+            </div> {% endcomment %}
+            {% for item in projectData %}
+
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#!">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="h2">{{item.p_title}}</div>
+                                <p class="mb-0">{{item.p_short}}</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="/media/{{item.p_img}}" alt="..." />
+                    </a>
+                </div>
+                
+            {% endfor %}
+            
+            {% comment %} <div class="col-lg-6">
+                <a class="portfolio-item" href="#!">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <div class="h2">Strawberries</div>
+                            <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="/static/assets/img/portfolio-3.jpg" alt="..." />
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <a class="portfolio-item" href="#!">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <div class="h2">Workspace</div>
+                            <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="/static/assets/img/portfolio-4.jpg" alt="..." />
+                </a>
+            </div> {% endcomment %}
+        </div>
+    </div>
+</section>
+<!-- Call to Action-->
+<section class="content-section bg-primary text-white">
+    <div class="container px-4 px-lg-5 text-center">
+        <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+        <a class="btn btn-xl btn-light me-4" href="#!">Click Me!</a>
+        <a class="btn btn-xl btn-dark" href="#!">Look at Me!</a>
+    </div>
+</section>
+
+{% endblock %}
